@@ -12,9 +12,9 @@ const Footer = () => {
     message: "",
   });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const { loading, setLoading } = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const { name, email, message } = formData;
+  const { name, email, message }= formData;
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
@@ -63,15 +63,15 @@ const Footer = () => {
             />
           </div>
           <div className="app__flex">
-              <input
-                className="p-text"
-                type="email"
-                placeholder="Your Email"
-                name="email"
-                value={email}
-                onChange={handleChangeInput}
-              />
-            </div>
+            <input
+              className="p-text"
+              type="email"
+              placeholder="Your Email"
+              name="email"
+              value={email}
+              onChange={handleChangeInput}
+            />
+          </div>
           <div>
             <textarea
               className="p-text"
@@ -97,5 +97,5 @@ const Footer = () => {
 export default AppWrap(
   MotionWrap(Footer, "app__footer"),
   "contact",
-  "app__whitebg"
+  "app__primarybg"
 );
