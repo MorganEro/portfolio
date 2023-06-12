@@ -1,15 +1,16 @@
 import React from 'react'
-import { BsInstagram } from 'react-icons/bs'
+import { AiFillGithub } from "react-icons/ai";
 import { FaFacebookF } from 'react-icons/fa'
 
 const SocialMedia = () => {
   return (
     <div className='app__social'>
-        <div title='Facebook'>
-            <FaFacebookF />
-        </div>
-        <div title='Instagram'>
-            <BsInstagram />
+        
+        <div title='Github Resume'>
+          <a href='https://morganero.github.io/' target="_blank" rel="noreferrer">
+            <AiFillGithub /> 
+
+          </a>
         </div>
     </div>
   )
