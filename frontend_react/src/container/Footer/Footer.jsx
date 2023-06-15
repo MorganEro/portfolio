@@ -68,7 +68,7 @@ const Footer = () => {
             <input
               className="p-text"
               type="email"
-              placeholder="Your Email"
+              placeholder="Your Email Address"
               name="email"
               value={email}
               onChange={handleChangeInput}

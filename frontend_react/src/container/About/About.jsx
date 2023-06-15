@@ -17,8 +17,8 @@ const About = () => {
   return (
     <>
       <h2 className="head-text">
-        Without continual <span>Growth and Progress </span> <br />
-        such words as <span> Improvement, achievement, and success </span>have
+        Without Continual <span>Growth and Progress </span> <br />
+        Such Words as <span> Improvement, Achievement, and Success </span>have
         no meaning.
       </h2>
       <div className="app__profile">

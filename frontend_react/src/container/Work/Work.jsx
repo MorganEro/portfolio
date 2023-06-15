@@ -40,7 +40,7 @@ const Work = () => {
   return (
     <>
       <h2 className="head-text">
-        My <span>Projects</span> section
+        My <span>Projects</span>
       </h2>
       <div className="app__work-filter">
         {["Web Api", "React JS", "All"].map((item, index) => (
