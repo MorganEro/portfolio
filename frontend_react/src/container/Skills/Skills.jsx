@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import { motion } from "framer-motion";
+import { BsInfoCircleFill } from "react-icons/bs";
 
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
@@ -10,7 +11,7 @@ import "./Skills.scss";
 const Skills = () => {
   const [skills, setSkills] = useState([]);
   const [experiences, setExperiences] = useState([]);
-
+ 
   useEffect(() => {
     const query = '*[_type == "experiences"]';
     const skillsQuery = '*[_type == "skills"]';
@@ -18,6 +19,7 @@ const Skills = () => {
     client.fetch(query).then((data) => {
       setExperiences(data);
     });
+    
 
     client.fetch(skillsQuery).then((data) => {
       setSkills(data);
@@ -27,7 +29,7 @@ const Skills = () => {
   return (
     <>
       <h2 className="head-text">
-        My <span>Skills</span> and <span>Experience</span> section
+        <span>Skills</span> and <span>Experience</span>
       </h2>
 
       <div className="app__skills-container">
@@ -51,6 +53,7 @@ const Skills = () => {
         </motion.div>
 
         <motion.div className="app__skills-exp">
+          
           {experiences?.map((experience) => (
             <motion.div className="app__skills-exp-item" key={experience.year}>
               <div className="app__skills-exp-year">
@@ -67,7 +70,7 @@ const Skills = () => {
                       data-tooltip-content={work.desc}
                       key={work.name}
                     >
-                      <h4 className="bold-text"> {work.name}</h4>
+                      <h4 className="bold-text"> {work.name}{' '}   <BsInfoCircleFill /></h4>
                       <p className="p-text">{work.company}</p>
                     </motion.div>
                     <ReactTooltip

@@ -14,7 +14,7 @@ const Footer = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const { name, email, message }= formData;
+  const { name, email, message } = formData;
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
@@ -22,7 +22,8 @@ const Footer = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     setLoading(true);
 
     const contact = {
@@ -43,15 +44,16 @@ const Footer = () => {
       <h2 className="head-text"> Let's Connect</h2>
 
       <div className="app__footer-cards">
-        <div className="app__footer-card">
-          <img src={images.email} alt="email" />
-          <a href="mailto:morganero1@gmail.com" className="p-text">
-            MorganEro1@gmail.com
-          </a>
-        </div>
+      <p className="bold-text"> Send Me An Email</p>
+        <a href="mailto:morganero1@gmail.com" className="p-text">
+          <div className="app__footer-card">
+            <img src={images.email} alt="email" />
+          </div>
+        </a>
       </div>
       {!isFormSubmitted ? (
-        <div className="app__footer-form app__flex">
+        <form className="app__footer-form app__flex">
+          <p className="bold-text"> Send Me A Message</p>
           <div className="app__flex">
             <input
               className="p-text"
@@ -81,10 +83,18 @@ const Footer = () => {
               onChange={handleChangeInput}
             />
           </div>
-          <button type="button" className="p-text" onClick={handleSubmit}>
-            {loading ? "Sending" : "Send Message"}
-          </button>
-        </div>
+          {formData.email === "" ||
+          formData.name === "" ||
+          formData.message === "" ? (
+            <button type="button" className="p-text">
+              Complete Form
+            </button>
+          ) : (
+            <button type="submit" className="p-text" onClick={handleSubmit}>
+              {loading ? "Sending" : "Send Message"}
+            </button>
+          )}
+        </form>
       ) : (
         <div>
           <h3 className="head-text">Thanks For Reaching Out!</h3>

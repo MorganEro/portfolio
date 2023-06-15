@@ -10,7 +10,7 @@ const NavigationDots = ({ active }) => {
             href={`#${item}`}
             key={item + index}
             className="app__navigation-dot"
-            style={active === item ? { backgroundColor: "#313BAC" } : {}}
+            style={active === item ? { backgroundColor: "#f39056" } : {}}
             data-tooltip-id={item + index}
             data-tooltip-content={item}
           >

@@ -1,6 +1,5 @@
 import React from 'react'
-import { AiFillGithub } from "react-icons/ai";
-import { FaFacebookF } from 'react-icons/fa'
+import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 
 const SocialMedia = () => {
   return (
@@ -9,7 +8,11 @@ const SocialMedia = () => {
         <div title='Github Resume'>
           <a href='https://morganero.github.io/' target="_blank" rel="noreferrer">
             <AiFillGithub /> 
-
+          </a>
+        </div>
+        <div title='LinkedIn'>
+          <a href='https://www.linkedin.com/in/morgan-ero/' target="_blank" rel="noreferrer">
+            <AiFillLinkedin /> 
           </a>
         </div>
     </div>

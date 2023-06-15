@@ -23,6 +23,11 @@
     width: 50px;
     height: 50px;
 
+    &:hover {
+      transition: all .3s ease-in-out;
+      transform: scale(1.1);
+    }
+
     @media screen and (min-width: 2000px) {
       width: 180px;
       height: 40px;
@@ -94,23 +99,28 @@
     width: 70%;
     height: 70%;
     color: var(--white-color);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--gray-color);
+    }
   }
 
   div {
     position: fixed;
     top: 0;
     bottom: 0;
-    right: 0;
+    left: 0;
     z-index: 5;
 
     padding: 1rem;
 
-    width: 80%;
+    width: 35%;
     height: 100vh;
 
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: flex-start;
     flex-direction: column;
 
     background: url("../../assets/bgWhite.png");
@@ -143,7 +153,7 @@
         margin: 1rem;
 
         a {
-          color: var(--gray-color);
+          
           text-decoration: none;
           font-size: 1rem;
           text-transform: uppercase;

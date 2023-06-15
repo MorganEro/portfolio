@@ -103,6 +103,10 @@
   align-items: center;
   flex-direction: column;
 
+  position: fixed;
+  left: 10px;
+  bottom: 0;
+
   padding: 1rem;
 
   div {
@@ -126,12 +130,7 @@
     }
 
     &:hover {
-      background-color: var(--secondary-color);
-      border-color: var(--secondary-color);
-
-      svg {
-        color: var(--white-color);
-      }
+      transform: scale(1.1);
     }
 
     @media screen and (min-width: 2000px) {
@@ -154,6 +153,12 @@
   align-items: center;
   flex-direction: column;
 
+  position: fixed;
+  right: 10px;
+  bottom: 0;
+  top: 0;
+
+
   padding: 1rem;
 
   .app__navigation-dot {
@@ -163,11 +168,9 @@
     background-color: #cbcbcb;
     margin: 0.5rem;
 
+
     transition: background-color 0.2s ease-in-out;
 
-    &:hover {
-      background-color: var(--secondary-color);
-    }
 
     @media screen and (min-width: 2000px) {
       width: 20px;
